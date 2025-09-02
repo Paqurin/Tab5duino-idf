@@ -1,12 +1,23 @@
 """
 Tab5duino-IDF Framework Builder for PlatformIO
 Handles compilation and linking of Arduino-compatible code with ESP-IDF
+Includes ESP32-P4 upload fixes for M5Stack Tab5 hardware
 """
 
 import os
 import sys
 from os.path import isdir, join, realpath
 from SCons.Script import DefaultEnvironment
+
+# Import ESP32-P4 upload fix
+current_dir = os.path.dirname(os.path.realpath(__file__))
+upload_script = os.path.join(current_dir, "upload_esp32p4.py")
+if os.path.exists(upload_script):
+    try:
+        exec(open(upload_script).read())
+        print("✓ ESP32-P4 upload fix loaded")
+    except Exception as e:
+        print(f"Warning: ESP32-P4 upload fix failed to load: {e}")
 
 env = DefaultEnvironment()
 platform = env.PioPlatform()
