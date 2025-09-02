@@ -309,6 +309,12 @@ upload_speed = 921600
    - Check subsystem initialization status
    - Verify hardware connections
 
+4. **ESP32-P4 Specific Issues**
+   - **"Invalid Header" Errors**: Use ESP-IDF framework instead of Arduino for better ESP32-P4 support
+   - **Bootloader Issues**: Flash complete firmware with bootloader using esptool --chip esp32p4
+   - **Serial Communication**: Use Serial2 instead of Serial for ESP32-P4 compatibility
+   - See [ESP32P4_TROUBLESHOOTING.md](ESP32P4_TROUBLESHOOTING.md) for detailed solutions
+
 ### Debug Configuration
 
 ```ini
