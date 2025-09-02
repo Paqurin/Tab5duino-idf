@@ -1,0 +1,283 @@
+# Tab5duino-IDF Framework .gitignore
+# ESP32-P4 development with PlatformIO
+
+# Build directories
+build/
+.pio/
+.pioenvs/
+.piolibdeps/
+.vscode/.browse.c_cpp.db*
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+
+# ESP-IDF specific
+sdkconfig
+sdkconfig.old
+sdkconfig.defaults.*
+
+# CMake build system
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ESP32-P4 specific
+# Flash dumps and memory dumps
+*.bin
+*.elf
+*.map
+
+# Partition tables (keep template versions)
+partitions.csv
+partition_table.bin
+
+# Bootloader
+bootloader.bin
+
+# OTA files
+*.ota
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Local configuration files
+local_settings.py
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Hardware-specific calibration files
+calibration.bin
+touch_calibration.dat
+
+# Generated documentation
+docs/html/
+docs/latex/
+docs/xml/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Lock files
+yarn.lock
+package-lock.json
+Pipfile.lock
+
+# Test results
+test_results/
+test_output/
+
+# Performance benchmark results
+benchmarks/
+
+# Local development scripts
+local_*.sh
+dev_*.py
+
+# Certificates and keys (security)
+*.pem
+*.key
+*.crt
+*.p12
+
+# Binary firmware files (keep examples)
+firmware/
+!examples/*/firmware/
+
+# PlatformIO specific ignores
+.pio
+.pioenvs
+.piolibdeps
+.vscode/.browse.c_cpp.db*
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/ipch
+
+# Framework development specific
+# Keep the core framework files but ignore development artifacts
+!framework/
+framework/build/
+framework/logs/
+framework/tmp/
+
+# Example project builds (keep source)
+examples/*/build/
+examples/*/.pio/
+examples/*/sdkconfig
+examples/*/sdkconfig.old
+
+# Documentation builds
+docs/build/
+docs/_build/
+
+# Release artifacts
+releases/
+packages/
+*.tar.gz
+*.zip
+!releases/README.md
+
+# Local testing directories  
+test_projects/
+sandbox/
+playground/
+
+# VSCode workspace settings
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+Session.vim
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Tags files
+TAGS
+tags
+.tags
+.tags1
+.tags_sorted_by_file
+tags.lock
+tags.temp
+
+# Local history
+.history/
+
+# Profiling data
+*.prof
+
+# Coverage data
+.nyc_output/
+coverage/
+
+# Debug symbols
+*.pdb
+*.dbg
+
+# Static analysis results
+.sonar/
+sonar-project.properties
+
+# Language Server Protocol files
+.ccls-cache/
+.clangd/
+
+# Compiler-specific
+*.o
+*.a
+*.obj
+*.lib
+*.exp
+
+# Linker files
+*.ld.old
+
+# Memory analysis
+*.mem
+*.heap
+
+# Performance profiling
+perf.data*
+*.perf
+
+# Device-specific configurations
+device_config_*.json
+hardware_profile_*.json

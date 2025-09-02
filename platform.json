@@ -1,0 +1,108 @@
+{
+  "name": "tab5duino-idf",
+  "title": "Tab5duino-IDF Platform for ESP32-P4",
+  "description": "Arduino-compatible framework for ESP32-P4 M5Stack Tab5 built on ESP-IDF",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Paqurin/Tab5duino-idf",
+  "license": "MIT",
+  "keywords": [
+    "framework",
+    "arduino",
+    "esp-idf",
+    "esp32-p4",
+    "risc-v",
+    "m5stack",
+    "tab5",
+    "embedded"
+  ],
+  "engines": {
+    "platformio": ">=6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Paqurin/Tab5duino-idf.git"
+  },
+  "frameworks": {
+    "tab5duino-idf": {
+      "package": "framework-tab5duino-idf",
+      "script": "builder/main.py"
+    }
+  },
+  "packages": {
+    "framework-tab5duino-idf": {
+      "type": "framework",
+      "optional": false,
+      "version": "~1.0.0"
+    },
+    "toolchain-riscv32-esp": {
+      "type": "toolchain",
+      "optional": false,
+      "version": "~13.2.0"
+    },
+    "tool-esptoolpy": {
+      "type": "uploader",
+      "optional": false,
+      "version": "~1.40804.0"
+    },
+    "tool-cmake": {
+      "type": "tool",
+      "optional": false,
+      "version": "~3.16.0"
+    },
+    "tool-ninja": {
+      "type": "tool",
+      "optional": false,
+      "version": "~1.7.0"
+    },
+    "tool-idf": {
+      "type": "tool",
+      "optional": false,
+      "version": "~5.5.0"
+    }
+  },
+  "boards": {
+    "m5tab5": {
+      "name": "M5Stack Tab5 (ESP32-P4)",
+      "mcu": "esp32p4",
+      "f_cpu": "400000000L",
+      "f_flash": "80000000L",
+      "flash": {
+        "maximum_size": 16777216,
+        "require_flash_mode": "dio",
+        "speed": 80
+      },
+      "ram": {
+        "maximum_size": 786432
+      },
+      "psram": {
+        "maximum_size": 33554432,
+        "speed": 200
+      },
+      "connectivity": [
+        "wifi",
+        "bluetooth",
+        "usb-otg"
+      ],
+      "debug": {
+        "openocd_target": "esp32p4.cfg",
+        "openocd_scripts": [
+          "interface/ftdi/esp32_devkitj_v1.cfg",
+          "target/esp32p4.cfg"
+        ]
+      },
+      "frameworks": [
+        "tab5duino-idf"
+      ],
+      "upload": {
+        "maximum_size": 16777216,
+        "require_upload_port": true,
+        "speed": 921600,
+        "wait_for_upload_port": false,
+        "use_1200bps_touch": false,
+        "protocol": "esptool"
+      },
+      "url": "https://docs.m5stack.com/en/core/M5Tab5",
+      "vendor": "M5Stack"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "name": "framework-tab5duino-idf",
+  "version": "1.0.0",
+  "description": "Tab5duino Framework for ESP32-P4 M5Stack Tab5 - Arduino-compatible framework built on ESP-IDF",
+  "keywords": [
+    "framework",
+    "arduino",
+    "esp-idf",
+    "esp32-p4",
+    "risc-v",
+    "m5stack",
+    "tab5",
+    "embedded",
+    "iot"
+  ],
+  "homepage": "https://github.com/Paqurin/Tab5duino-idf",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Paqurin/Tab5duino-idf.git"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "M5Stack Team",
+      "email": "support@m5stack.com",
+      "url": "https://m5stack.com"
+    }
+  ],
+  "engines": {
+    "platformio": ">=6.0.0"
+  },
+  "platforms": [
+    "tab5duino-idf"
+  ],
+  "export": {
+    "include": [
+      "cores",
+      "libraries", 
+      "variants",
+      "tools",
+      "components",
+      "*.json",
+      "*.py"
+    ],
+    "exclude": [
+      ".*",
+      "examples",
+      "tests",
+      "docs"
+    ]
+  },
+  "dependencies": {
+    "tool-cmake": ">=3.16.0",
+    "tool-ninja": ">=1.7.0",
+    "toolchain-riscv32-esp": ">=13.2.0"
+  }
+}

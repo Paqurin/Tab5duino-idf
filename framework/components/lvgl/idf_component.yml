@@ -1,0 +1,58 @@
+## IDF Component Manager Manifest File for LVGL
+version: "8.4.0"
+description: "Light and Versatile Graphics Library optimized for M5Stack Tab5 ESP32-P4"
+url: https://github.com/lvgl/lvgl
+repository: https://github.com/lvgl/lvgl.git
+
+dependencies:
+  # No external dependencies - self-contained graphics library
+  idf:
+    version: ">=5.0.0"
+    
+targets:
+  - esp32p4
+
+build:
+  # Include LVGL source files
+  cmake_lists_path: "."
+  
+  # Preprocessor definitions
+  public_definitions:
+    - "LV_CONF_INCLUDE_SIMPLE=1"
+    - "LV_CONF_PATH=\"lv_conf.h\""
+    - "ESP32_P4_TAB5_OPTIMIZED=1"
+
+  # Public include directories that other components can use
+  public_include_directories:
+    - "."
+    - "src"
+    - "src/core"
+    - "src/draw"
+    - "src/font"
+    - "src/hal"
+    - "src/misc" 
+    - "src/widgets"
+    - "src/extra"
+
+  # Source files to compile
+  source_directories:
+    - "src/core"
+    - "src/draw"
+    - "src/font" 
+    - "src/hal"
+    - "src/misc"
+    - "src/widgets"
+    - "src/extra/layouts"
+    - "src/extra/libs"
+    - "src/extra/others"
+    - "src/extra/themes"
+    - "src/extra/widgets"
+
+  # Include source files recursively
+  source_files:
+    - "src/*.c"
+
+examples:
+  - path: examples/basic
+  - path: examples/widgets
+  - path: examples/performance

@@ -1,0 +1,43 @@
+{
+  "name": "LVGL",
+  "version": "8.4.0",
+  "description": "Light and Versatile Graphics Library optimized for M5Stack Tab5 ESP32-P4",
+  "keywords": ["graphics", "gui", "display", "esp32", "m5stack"],
+  "authors": [
+    {
+      "name": "LVGL Team",
+      "url": "https://lvgl.io/"
+    },
+    {
+      "name": "Tab5duino Integration",
+      "maintainer": true
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lvgl/lvgl.git"
+  },
+  "frameworks": ["espidf", "arduino"],
+  "platforms": ["espressif32"],
+  "export": {
+    "include": [
+      "src",
+      "src/core",
+      "src/draw",
+      "src/font",
+      "src/hal",
+      "src/misc",
+      "src/widgets",
+      "lv_conf.h"
+    ]
+  },
+  "build": {
+    "includeDir": ".",
+    "srcDir": "src",
+    "flags": [
+      "-DLV_CONF_INCLUDE_SIMPLE=1",
+      "-DLV_CONF_PATH=\\\"lv_conf.h\\\"",
+      "-DESP32_P4_TAB5_OPTIMIZED=1"
+    ]
+  }
+}
