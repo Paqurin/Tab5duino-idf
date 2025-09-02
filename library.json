@@ -1,0 +1,57 @@
+{
+    "name": "Tab5duino",
+    "version": "1.0.0",
+    "description": "Arduino-compatible library for ESP32-P4 M5Stack Tab5 with stable ESP-IDF foundation",
+    "keywords": [
+        "arduino",
+        "esp32-p4",
+        "risc-v",
+        "m5stack",
+        "tab5",
+        "embedded",
+        "hal"
+    ],
+    "authors": [
+        {
+            "name": "M5Stack Team",
+            "email": "support@m5stack.com",
+            "url": "https://m5stack.com"
+        }
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/Paqurin/Tab5duino-idf",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Paqurin/Tab5duino-idf.git"
+    },
+    "frameworks": [
+        "arduino"
+    ],
+    "platforms": [
+        "espressif32"
+    ],
+    "headers": [
+        "Tab5duino.h"
+    ],
+    "export": {
+        "include": [
+            "*.h",
+            "hal/*.h",
+            "variants/m5tab5/*.h"
+        ]
+    },
+    "build": {
+        "flags": [
+            "-DTAB5DUINO_LIBRARY=1",
+            "-DESP32_P4_SUPPORT=1",
+            "-DBOARD_HAS_PSRAM=1"
+        ],
+        "srcFilter": [
+            "+<src/>",
+            "+<variants/>"
+        ]
+    },
+    "dependencies": {
+        "ESP32": ">=2.0.0"
+    }
+}
